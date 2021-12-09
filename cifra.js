@@ -2,14 +2,34 @@ let form = document.querySelector('form');
 let input = document.getElementById('CipherInput');
 let selection = document.getElementById('EncodeTypes');
 let radios = document.querySelectorAll('input[type=radio]');
+let passoContainer = document.querySelector('label[for=CipherPass]');
 let passo = document.getElementById('CipherPass');
 let result = document.getElementById('Result');
 let button = document.querySelector('input[type=submit]');
 
 
+
 form.addEventListener("submit", function(e) {
     e.preventDefault()
     return false;
+})
+radios.forEach(radio => {
+    radio.addEventListener('click', (e) => {
+        if(e.target.id == 'encode'){
+            button.value = 'Codificar'
+        }
+        else{
+            button.value = 'Decodificar'
+        }
+    })
+})
+selection.addEventListener("change",function(e) {
+     if( e.target.value == '1' ){
+         passoContainer.style.display = 'none';
+     }
+     else if(e.target.value == '2') {
+        passoContainer.style.display = 'flex';
+     }
 })
 
 input.addEventListener("keyup", function(e) {

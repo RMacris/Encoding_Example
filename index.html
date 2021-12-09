@@ -16,11 +16,11 @@
                 <p class=" --font-size-small --light-font-color --margin-big">Escolha entre a antiga Cifra de Cesar ou a moderna Base64</p>  
             </div>
 
-            <label class="form__label --margin-bottom" for="name">
+            <label class="form__label --margin-bottom" for="CipherInput">
                 <span class="--font-size-big --light-font-color --margin-bottom">Conteudo a ser cifrado</span>
                 <input class=" --font-size-big --background-color-gray" id="CipherInput" type="text" name="cipherinput" placeholder="Oi, você conseguiu... ?">
             </label>
-            <label class="form__label --margin-bottom" for="cameToKnow">
+            <label class="form__label --margin-bottom" for="encodeTypes">
                 <span class=" --light-font-color" >Método Criptografico</span>
                 <select class="--font-size-big --background-color-gray --light-font-color" placeholder="---" name="encodeTypes" id="EncodeTypes">
                     <option value="0">---</option>
@@ -30,9 +30,9 @@
             </label>
             
             <fieldset class="--margin-bottom">
-                <label for="enconde" class="enconding__label" >
+                <label for="encode" class="enconding__label" >
                     <span class=" --light-font-color" >Codificar</span>
-                    <input id="enconde" type="radio" name="encoding" class="enconding__action"> 
+                    <input id="encode" type="radio" name="encoding" class="enconding__action"> 
                 </label>
                 <label for="decode" class="enconding__label ">
                     <span class=" --light-font-color --margin-bottom" >Decodificar</span>
@@ -40,12 +40,12 @@
                 </label>
             </fieldset>
 
-            <label class="form__label --margin-bottom" for="name">
+            <label class="form__label --margin-bottom" for="CipherPass">
                 <span class="--font-size-big --light-font-color --margin-bottom">Passo da cifra</span>
                 <input class=" --font-size-big --background-color-gray" id="CipherPass" type="number" name="passo" placeholder="1" min="1" max="9999999">
             </label>
             
-            <label class="form__label --margin-bottom" for="name">
+            <label class="form__label --margin-bottom" for="Result">
                 <span class="--font-size-big --light-font-color --margin-bottom">Resultado</span>
                 <textarea class=" --font-size-big --background-color-gray" id="Result" type="text" name="result" readonly="readonly"></textarea>
             </label>
