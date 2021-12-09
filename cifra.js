@@ -148,7 +148,7 @@ function cifra(texto, passo){
             passo = passo % 10 
 
            //ensure the passp in the numbers range
-            currentCode = (((texto.charCodeAt(i) % 48) + passo) % 10) + 48;
+            currentCode = (((texto.charCodeAt(i) - 48) + passo) % 10) + 48;
         }
         else if (texto.charCodeAt(i) >= 65 && texto.charCodeAt(i) <= 90) {
             passo = passo % 26 
@@ -157,14 +157,14 @@ function cifra(texto, passo){
             //soma o passo
             //divide por 26 para garantir que o valor não exceda o codigo maximo do alphabeto maiusculo
             //soma o valor resultante ao valor inical deslocando o codigo
-            currentCode = (((texto.charCodeAt(i) % 65) + passo) % 26) + 65;
+            currentCode = (((texto.charCodeAt(i) - 65) + passo) % 26) + 65;
         }
         else if (texto.charCodeAt(i) >= 97 && texto.charCodeAt(i) <= 122) {
             passo = passo % 26 
             //letras minusculas
-            currentCode = (((texto.charCodeAt(i) % 97) + passo) % 26) + 97;
+            currentCode = (((texto.charCodeAt(i) - 97) + passo) % 26) + 97;
         }
-        else if (texto.charCodeAt(i) === 32) {
+        else if (texto.charCodeAt(i) == 32) {
             currentCode = 32;
         }
 
@@ -185,7 +185,7 @@ function decifra(texto, passo){
         if (texto.charCodeAt(i) >= 48 && texto.charCodeAt(i) <= 57){
             passo = passo % 10 
             //ensure the passp in the numbers range
-            currentCode = (Math.abs((texto.charCodeAt(i) % 48) - passo) % 26) + 48;
+            currentCode = (Math.abs((texto.charCodeAt(i) - 48) - passo + 10) % 10) + 48;
          }
          else if (texto.charCodeAt(i) >= 65 && texto.charCodeAt(i) <= 90) {
             passo = passo % 26 
@@ -194,14 +194,14 @@ function decifra(texto, passo){
             //soma o passo
             //divide por 26 para garantir que o valor não exceda o codigo maximo do alphabeto maiusculo
             //soma o valor resultante ao valor inical deslocando o codigo
-            currentCode = (Math.abs((texto.charCodeAt(i) % 65) - passo) % 26) + 65;
+            currentCode = (Math.abs((texto.charCodeAt(i) - 65) - passo + 26) % 26) + 65;
          }
         else if (texto.charCodeAt(i) >= 97 && texto.charCodeAt(i) <= 122) {
             passo = passo % 26 
             //letras minusculas
-            currentCode = (Math.abs((texto.charCodeAt(i) % 97) - passo) % 26) + 97;
+            currentCode = (Math.abs((texto.charCodeAt(i) - 97) - passo + 26) % 26) + 97;
         }
-        else if (texto.charCodeAt(i) === 32) {
+        else if (texto.charCodeAt(i) == 32) {
             currentCode = 32;
         }
         
