@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="card.css">
+</head>
+<body>
+    <div>
+        <form class="form" action="">
+
+            <div class="form__title --background-color-white">
+                <h1 class=" --margin-big">Codifique sua mensagem</h1>
+                <p class=" --font-size-small --light-font-color --margin-big">Escolha entre a antiga Cifra de Cesar ou a moderna Base64</p>  
+            </div>
+
+            <label class="form__label --margin-bottom" for="name">
+                <span class="--font-size-big --light-font-color --margin-bottom">Conteudo a ser cifrado</span>
+                <input class=" --font-size-big --background-color-gray" id="CipherInput" type="text" name="cipherinput" placeholder="Oi, você conseguiu... ?">
+            </label>
+            <label class="form__label --margin-bottom" for="cameToKnow">
+                <span class=" --light-font-color" >Método Criptografico</span>
+                <select class="--font-size-big --background-color-gray --light-font-color" placeholder="---" name="encodeTypes" id="EncodeTypes">
+                    <option value="0">---</option>
+                    <option value="1">Base64</option>
+                    <option value="2">Cifra de Cesar</option>
+                </select>
+            </label>
+            
+            <fieldset class="--margin-bottom">
+                <label for="enconde" class="enconding__label" >
+                    <span class=" --light-font-color" >Codificar</span>
+                    <input id="enconde" type="radio" name="encoding" class="enconding__action"> 
+                </label>
+                <label for="decode" class="enconding__label ">
+                    <span class=" --light-font-color --margin-bottom" >Decodificar</span>
+                    <input id="decode" type="radio" name="encoding" class="enconding__action">
+                </label>
+            </fieldset>
+
+            <label class="form__label --margin-bottom" for="name">
+                <span class="--font-size-big --light-font-color --margin-bottom">Passo da cifra</span>
+                <input class=" --font-size-big --background-color-gray" id="CipherPass" type="number" name="passo" placeholder="1" min="1" max="9999999">
+            </label>
+            
+            <label class="form__label --margin-bottom" for="name">
+                <span class="--font-size-big --light-font-color --margin-bottom">Resultado</span>
+                <textarea class=" --font-size-big --background-color-gray" id="Result" type="text" name="result" readonly="readonly"></textarea>
+            </label>
+
+            <input class="form__submit --white-font-color --btn-color --font-size-big" type="submit" value="Codificar">
+        </form>
+    </div>
+
+
+    <script src="cifra.js"></script>
+
+</body>
+</html>
